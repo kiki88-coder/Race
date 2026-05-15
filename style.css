@@ -1,0 +1,90 @@
+body{
+  margin:0;
+  overflow:hidden;
+  background:black;
+  display:flex;
+  justify-content:center;
+}
+
+.game{
+  width:400px;
+  height:100vh;
+  background:#111;
+  position:relative;
+  overflow:hidden;
+  border-left:5px solid #00ffff;
+  border-right:5px solid #00ffff;
+}
+
+.road{
+  position:absolute;
+  width:10px;
+  height:100%;
+  left:50%;
+  transform:translateX(-50%);
+  background:repeating-linear-gradient(
+    white 0px,
+    white 40px,
+    transparent 40px,
+    transparent 80px
+  );
+
+  animation:roadMove 0.3s linear infinite;
+}
+
+@keyframes roadMove{
+  from{
+    background-position-y:0;
+  }
+
+  to{
+    background-position-y:80px;
+  }
+}
+
+#player{
+  width:70px;
+  height:120px;
+  background:#00ffff;
+  position:absolute;
+  bottom:20px;
+  left:165px;
+  border-radius:10px;
+  box-shadow:0 0 20px #00ffff;
+}
+
+#enemy{
+  width:70px;
+  height:120px;
+  background:red;
+  position:absolute;
+  top:-150px;
+  left:165px;
+  border-radius:10px;
+  box-shadow:0 0 20px red;
+}
+
+.score{
+  position:absolute;
+  top:20px;
+  left:20px;
+  color:white;
+  font-size:25px;
+  font-family:Arial;
+}
+.mobile-controls{
+  position:absolute;
+  bottom:20px;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+}
+
+.mobile-controls button{
+  width:100px;
+  height:60px;
+  font-size:30px;
+  border:none;
+  border-radius:15px;
+  background:#00ffff;
+}
